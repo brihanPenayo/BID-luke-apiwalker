@@ -2,10 +2,10 @@ import React from 'react'
 import Error from './Error'
 import Success from './Success'
 
-const Results = ({ data, error, options }) => {
+const Results = ({ data, error, submited, options }) => {
     return (
         <div>
-            {error ? <Error /> : <Success data={data} options={options} />}
+            {error ? <Error /> : <Success submited={submited} data={data} options={options} />}
         </div>
     )
 }

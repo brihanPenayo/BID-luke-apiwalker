@@ -6,16 +6,19 @@ import Species from './Species'
 import Starships from './Starships'
 import Vehicles from './Vehicles'
 
-const Success = ({ data, options }) => {
+const Success = ({ data, options, submited }) => {
     return (
-        <div>
-            {options == "people" && <People data={data} />}
-            {options == "planets" && <Planets data={data} />}
-            {options == "starships" && <Starships data={data} />}
-            {options == "films" && <Films data={data} />}
-            {options == "species" && <Species data={data} />}
-            {options == "vehicles" && <Vehicles data={data} />}
-        </div>
+        <>{submited ? 
+            <div>
+                {options == "people" && <People data={data} />}
+                {options == "planets" && <Planets data={data} />}
+                {options == "starships" && <Starships data={data} />}
+                {options == "films" && <Films data={data} />}
+                {options == "species" && <Species data={data} />}
+                {options == "vehicles" && <Vehicles data={data} />}
+            </div> : <></>
+        }
+        </>
     )
 }
 
